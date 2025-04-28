@@ -6,6 +6,6 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/ori', function () {
-    return view('dashboard_ori');
+Route::get('/adaorangbaik', function () {
+    return view('adaorangbaik');
 });
