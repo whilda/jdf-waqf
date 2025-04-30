@@ -34,6 +34,12 @@
             <span>adaorangbaik.com</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="/amalsholeh">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>amalsholeh.com</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

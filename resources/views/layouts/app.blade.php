@@ -9,7 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>JDF - WAQF Dashboard</title>
+    <title>
+        @section('title')
+        @show
+    </title>
+
     <link href="{{asset("img/JDF-icon.png")}}" rel="icon" type="image/x-icon">
 
 

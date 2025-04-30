@@ -10,5 +10,5 @@ class Campaign extends Model
     use HasFactory;
 
     // Add fillable properties
-    protected $fillable = ['platform', 'title', 'url', 'donation', 'donor', 'due_date', 'status'];
+    protected $fillable = ['id','platform', 'title', 'url', 'donation', 'donor', 'status'];
 }
