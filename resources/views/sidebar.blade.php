@@ -40,6 +40,12 @@
             <span>amalsholeh.com</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="/baznasjabar">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>baznasjabar.org</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
