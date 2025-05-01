@@ -108,7 +108,7 @@
         <!-- Card Header - Accordion -->
         <a href="#collapseCard-adaorangbaik" class="d-block card-header py-3" data-toggle="collapse"
             role="button" aria-expanded="true" aria-controls="collapseCardExample">
-            <h6 class="m-0 font-weight-bold text-primary">CAMPAIGN - adaorangbaik.com</h6>
+            <h6 class="m-0 font-weight-bold text-primary">CAMPAIGN - adaorangbaik.com <i>(updated: {{ $data['adaorangbaik-crawl-date'] }} )</i></h6>
         </a>
         <!-- Card Content - Collapse -->
         <div class="collapse show" id="collapseCard-adaorangbaik">
@@ -188,7 +188,7 @@
         <!-- Card Header - Accordion -->
         <a href="#collapseCard-amalsholeh" class="d-block card-header py-3" data-toggle="collapse"
             role="button" aria-expanded="true" aria-controls="collapseCardExample">
-            <h6 class="m-0 font-weight-bold text-primary">CAMPAIGN - amalsholeh.com</h6>
+            <h6 class="m-0 font-weight-bold text-primary">CAMPAIGN - amalsholeh.com <i>(updated: {{ $data['amalsholeh-crawl-date'] }} )</i></h6>
         </a>
         <!-- Card Content - Collapse -->
         <div class="collapse show" id="collapseCard-amalsholeh">
@@ -268,7 +268,7 @@
         <!-- Card Header - Accordion -->
         <a href="#collapseCard-baznasjabar" class="d-block card-header py-3" data-toggle="collapse"
             role="button" aria-expanded="true" aria-controls="collapseCardExample">
-            <h6 class="m-0 font-weight-bold text-primary">CAMPAIGN - baznasjabar.org</h6>
+            <h6 class="m-0 font-weight-bold text-primary">CAMPAIGN - baznasjabar.org <i>(updated: {{ $data['baznasjabar-crawl-date'] }} )</i></h6>
         </a>
         <!-- Card Content - Collapse -->
         <div class="collapse show" id="collapseCard-baznasjabar">

@@ -18,4 +18,4 @@ Route::get('/baznasjabar', [CampaignController::class, 'baznasjabar_index']);
 Route::post('/baznasjabar_insert',[CampaignController::class, 'baznasjabar_insert']);
 Route::get('/baznasjabar_crawl', [CampaignController::class, 'baznasjabar_crawl']);
 
-Route::get('/sandbox', [CampaignController::class, 'sandbox']);
+Route::get('/sandbox', [DashboardController::class, 'sandbox']);

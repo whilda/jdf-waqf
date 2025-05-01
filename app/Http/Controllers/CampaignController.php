@@ -196,10 +196,4 @@ class CampaignController extends Controller
 
         return $campaign;
     }
-
-    public function sandbox()
-    {
-        $Campaign = CampaignController::baznasjabar_crawl_detail('https://baznasjabar.org/sedekahbangunmasjid');
-        return response()->json($Campaign);
-    }
 }
