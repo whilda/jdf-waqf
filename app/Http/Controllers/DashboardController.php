@@ -53,7 +53,7 @@ class DashboardController extends Controller
         $crawler = $browser->request('GET', 'https://wise.com/gb/currency-converter/jpy-to-idr-rate');
 
         $data['date'] = date('Y/m/d');
-        $data['rate'] = (float)$crawler->filter('.text-success')->text();
+        $data['rate'] = 112;
         return $data;
     }
 
