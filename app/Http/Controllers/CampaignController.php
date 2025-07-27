@@ -12,7 +12,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class CampaignController extends Controller
 {
-    // Define the index method
+    // adaorangbaik web scrapping
     public function adaorangbaik_index()
     {
         // Fetch all products from the database
@@ -74,7 +74,7 @@ class CampaignController extends Controller
         return $campaign;
     }
 
-    // Define the index method
+    // amalsholeh api request
     public function amalsholeh_index()
     {
         // Fetch all products from the database
@@ -136,9 +136,70 @@ class CampaignController extends Controller
         return $campaign;
     }
 
-    public function adaorangbaik_sandbox()
+    // baznasjabar web scrapping
+    public function baznasjabar_index()
     {
-        $Campaign = CampaignController::amalsholeh_crawl_detail('https://core.sholeh.app/api/v1/program/masjidshizuoka/summary');
+        // Fetch all products from the database
+        $Campaigns = Campaign::where('platform', 'baznasjabar.org')->get();
+        // Pass the products data to the view
+        return view('baznasjabar', compact('Campaigns'));
+    }
+
+    public function baznasjabar_insert(Request $request)
+    {
+        $campaign = new Campaign();
+        $campaign->platform = 'baznasjabar.org';
+        $campaign->title = 'T.B.D';
+        $campaign->url = $request->input('url');
+        $campaign->donation = 0;
+        $campaign->donor = 0;
+        $campaign->status = 'T.B.D';
+        $campaign->save();
+
+        return CampaignController::baznasjabar_index();
+    }
+
+    public function baznasjabar_crawl()
+    {
+        set_time_limit(300);
+        $campaigns = Campaign::where('platform', 'baznasjabar.org')->get();
+        foreach ($campaigns as $campaign) {
+            $scrap = CampaignController::baznasjabar_crawl_detail($campaign->url);
+            $model = Campaign::where('url', $campaign->url)->first();
+            $model['title'] = $scrap['title'];
+            $model['donation'] = $scrap['donation'];
+            $model['donor'] = $scrap['donor'];
+            $model['status'] = $scrap['status'];
+            $model->update();
+        }
+        $ret['status'] = 'done';
+        return response()->json($ret);
+    }
+
+    public function baznasjabar_crawl_detail($url){
+        $browser = new HttpBrowser(HttpClient::create());
+
+        $crawler = $browser->request('GET', $url);
+
+        $campaign['url'] = $url;
+        $campaign['title'] = $crawler->filter('.container h2')->first()->text();
+        $campaign['donation'] = preg_replace('/\D/', '',  $crawler->filter('#sidebar-campaign h3')->first()->text());
+        $campaign['donor'] = 0;
+
+        // Decode Due Date
+        $string = json_decode('"' . $crawler->filter('#sidebar-campaign .d-flex.justify-content-between span')->last()->text() . '"');
+        if ($string == "sudah berakhir") {
+            $campaign['status'] = 'Close';
+        } else {
+            $campaign['status'] = 'Ongoing';
+        }
+
+        return $campaign;
+    }
+
+    public function sandbox()
+    {
+        $Campaign = CampaignController::baznasjabar_crawl_detail('https://baznasjabar.org/sedekahbangunmasjid');
         return response()->json($Campaign);
     }
 }

@@ -2,7 +2,7 @@
 @extends('sidebar')
 
 @section('title')
-    JDF - amalsholeh.com
+    JDF - baznasjabar.org
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
-        <h1 class="h3 mb-0 text-gray-800">amalsholeh.com</h1>
+        <h1 class="h3 mb-0 text-gray-800">baznasjabar.org</h1>
     </div>
 
     <!-- DataTales -->
@@ -81,7 +81,7 @@
                                     <h1 class="h4 text-gray-900 mb-3">Create a campaign!</h1>
                                 </div>
                                 <hr>
-                                <form class="user" method="post" action="/amalsholeh_insert">
+                                <form class="user" method="post" action="/baznasjabar_insert">
                                     @csrf
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" id="url" name="url" placeholder="Url">

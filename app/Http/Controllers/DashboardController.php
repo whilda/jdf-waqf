@@ -42,6 +42,16 @@ class DashboardController extends Controller
         $data['amalsholeh-donation-jpy'] = '￥ ' . number_format($sum_yen, 2, ',', '.');
         $data['amalsholeh-donor'] = number_format($donor, 0, ',', '.');
 
+        // baznasjabar.org
+        $query = Campaign::where('platform', 'baznasjabar.org');
+        $donor = $query->sum('donor');
+        $sum_rupiah = $query->sum('donation');
+        $sum_yen = $sum_rupiah / $rate;
+
+        $data['baznasjabar-donation-idr'] = 'Rp. ' . number_format($sum_rupiah, 0, ',', '.');
+        $data['baznasjabar-donation-jpy'] = '￥ ' . number_format($sum_yen, 2, ',', '.');
+        $data['baznasjabar-donor'] = number_format($donor, 0, ',', '.');
+
         return view('dashboard', compact('data'));
     }
 }

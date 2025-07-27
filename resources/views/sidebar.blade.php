@@ -40,6 +40,12 @@
             <span>amalsholeh.com</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="/baznasjabar">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>baznasjabar.org</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
@@ -48,6 +54,20 @@
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
 
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Campaigns
+    </div>
+
+    <!-- Nav Item -->
+    <li class="nav-item">
+        <a class="nav-link" href="/jdf-waqf/public/chatbot">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>theislam.chat</span></a>
+    </li>
 </ul>
 <!-- End of Sidebar -->
 
